@@ -25,7 +25,7 @@ func handle(quit chan int, wg *sync.WaitGroup, f func()) {
 		select {
 		case <-quit: {
 			wg.Done()
-			break
+            return
 		}
 		default:
 			f()
